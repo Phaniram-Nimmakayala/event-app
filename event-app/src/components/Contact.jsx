@@ -21,7 +21,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   await axios.post(
-    "http://localhost:5000/api/events/feedback",
+    "https://event-app-backend-nn0z.onrender.com/api/events/feedback",
     formData
   );
 

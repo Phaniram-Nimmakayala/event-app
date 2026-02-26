@@ -29,7 +29,7 @@ const Signup = () => {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://event-app-backend-nn0z.onrender.com/api/auth/signup",
         formData
       );
 

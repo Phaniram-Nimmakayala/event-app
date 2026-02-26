@@ -20,28 +20,28 @@ const Admin = () => {
 
   const fetchDashboard = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/events/stats"
+      "https://event-app-backend-nn0z.onrender.com/api/events/stats"
     );
     setStats(res.data);
   };
 
   const fetchStudents = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/auth/students"
+      "https://event-app-backend-nn0z.onrender.com/api/auth/students"
     );
     setStudents(res.data);
   };
 
   const fetchEnrollments = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/events/enrollments"
+      "https://event-app-backend-nn0z.onrender.com/api/events/enrollments"
     );
     setEnrollments(res.data);
   };
 
   const fetchFeedback = async () => {
   const res = await axios.get(
-    "http://localhost:5000/api/events/feedback"
+    "https://event-app-backend-nn0z.onrender.com/api/events/feedback"
   );
   setFeedback(res.data);
 };
@@ -58,7 +58,7 @@ const deleteFeedback = async (id) => {
 
   try {
     await axios.delete(
-      `http://localhost:5000/api/events/feedback/${id}`
+      `https://event-app-backend-nn0z.onrender.com/api/events/feedback/${id}`
     );
 
     alert("Feedback deleted");
@@ -69,14 +69,13 @@ const deleteFeedback = async (id) => {
     console.log(error);
   }
 };
-
   /* ================= ADD EVENT ================= */
 
   const handleAddEvent = async () => {
     if (!eventName) return;
 
     await axios.post(
-      "http://localhost:5000/api/events/add",
+      "https://event-app-backend-nn0z.onrender.com/api/events/add",
       { eventName }
     );
 
@@ -90,7 +89,7 @@ const deleteFeedback = async (id) => {
     if (!window.confirm("Delete student?")) return;
 
     await axios.delete(
-      `http://localhost:5000/api/auth/students/${id}`
+      `https://event-app-backend-nn0z.onrender.com/api/auth/students/${id}`
     );
 
     fetchStudents();
@@ -109,7 +108,7 @@ const deleteEnrollment = async (id) => {
 
   try {
     await axios.delete(
-      `http://localhost:5000/api/events/enrollments/${id}`
+      `https://event-app-backend-nn0z.onrender.com/api/events/enrollments/${id}`
     );
 
     alert("Enrollment deleted");

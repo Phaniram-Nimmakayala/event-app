@@ -27,7 +27,7 @@ const Events = () => {
   /* ================= FETCH EVENTS ================= */
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/events")
+      .get("https://event-app-backend-nn0z.onrender.com/api/events")
       .then(res => setEvents(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -60,7 +60,7 @@ const Events = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/events/enroll",
+        "https://event-app-backend-nn0z.onrender.com/api/events/enroll",
         formData
       );
 

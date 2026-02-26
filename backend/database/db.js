@@ -5,7 +5,7 @@ const db = new sqlite3.Database("./students.db", (err) => {
   else console.log("SQLite Connected");
 });
 
-/* Create Students Table */
+/* ================= STUDENTS TABLE ================= */
 db.run(`
 CREATE TABLE IF NOT EXISTS students (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,7 +14,16 @@ CREATE TABLE IF NOT EXISTS students (
   email TEXT UNIQUE,
   mobile TEXT,
   sucNo TEXT UNIQUE,
-  password TEXT
+  password TEXT,
+  role TEXT DEFAULT 'student'
+)
+`);
+
+/* ================= EVENTS TABLE ================= */
+db.run(`
+CREATE TABLE IF NOT EXISTS events (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  eventName TEXT
 )
 `);
 
