@@ -226,7 +226,6 @@ required
 
   {/* Default Technical Expo */}
   <option value="1">
-    Technical Projects Expo
   </option>
 
   {/* Admin Added Events */}
