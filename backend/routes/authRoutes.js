@@ -19,17 +19,16 @@ router.delete("/students/:id", deleteStudent);
 
 /* ================= TEMP ADMIN CREATOR ================= */
 
-router.get("/make-admin", (req, res) => {
+router.get("/fix-role-column", (req, res) => {
 
   db.run(
-    "UPDATE students SET role='admin' WHERE email='admin@gmail.com'",
-    function (err) {
-
+    "ALTER TABLE students ADD COLUMN role TEXT DEFAULT 'student'",
+    (err) => {
       if (err) {
         return res.json({ error: err.message });
       }
 
-      res.json({ message: "Admin created successfully" });
+      res.json({ message: "Role column added ✅" });
     }
   );
 
