@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
-import AdminProtectedRoute from "./components/AdminProtectedRoute";
+// ❌ AdminProtectedRoute removed
 
 function App() {
   return (
@@ -20,15 +20,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* ✅ ADMIN PROTECTED */}
-        <Route
-          path="/admin"
-          element={
-            <AdminProtectedRoute>
-              <Admin />
-            </AdminProtectedRoute>
-          }
-        />
+        {/* ✅ ADMIN DIRECT ACCESS */}
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
     </Router>
